@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import logo from "./logo.png";
+import logo from "./king-pieces.jpeg";
 import { fetchStore, saveStore } from "./api";
 
 function Devis() {
