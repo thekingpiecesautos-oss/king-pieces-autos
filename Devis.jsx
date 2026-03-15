@@ -7,7 +7,7 @@ function Devis() {
   const formatEuro = (value) => `${Number(value || 0).toFixed(2)} €`;
 
   const genererNumeroDevis = () => {
-    const maintenant = new Date();
+    const maintenant = new Date(); 
     const y = maintenant.getFullYear();
     const m = String(maintenant.getMonth() + 1).padStart(2, "0");
     const d = String(maintenant.getDate()).padStart(2, "0");
