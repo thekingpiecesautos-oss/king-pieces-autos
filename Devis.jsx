@@ -10,7 +10,7 @@ function Devis() {
     const maintenant = new Date();
     const y = maintenant.getFullYear();
     const m = String(maintenant.getMonth() + 1).padStart(2, "0");
-    const d = String(maintenant.getDate()).padStart(2, "0");
+    const d = String(maintenant.getDate()).padStart(2, "0"); 
     const h = String(maintenant.getHours()).padStart(2, "0");
     const min = String(maintenant.getMinutes()).padStart(2, "0");
     return `DV/${y}/${m}${d}-${h}${min}`;
