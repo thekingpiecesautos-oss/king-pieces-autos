@@ -904,7 +904,7 @@ function Devis() {
       <div className="devis-print-only" style={styles.printPage}>
         <div style={styles.printTop}>
           <div style={styles.printCompanyLeft}>
-            <img src={logo} alt="Logo" style={styles.printLogo} />
+            <div style={{ fontWeight: "700", fontSize: "20px" }}>King Pieces Autos</div>
             <div style={styles.printCompanyName}>THE KING PIECES AUTOS</div>
             <p style={styles.printCompanyText}>32 AVENUE MARCEL CACHIN</p>
             <p style={styles.printCompanyText}>93240 STAINS France</p>
