@@ -3,7 +3,7 @@ import * as XLSX from "xlsx";
 import "./App.css";
 import logo from "./logo.png";
 import imageKing from "./king-pieces.jpeg";
-import Devis from "./Devis";
+// import Devis from "./Devis";
 import Clients from "./Clients";
 import Fournisseurs from "./Fournisseurs";
 import Finances from "./Finances";
@@ -96,7 +96,7 @@ function App() {
       sousCategories: [
         "Cardans",
         "Arbres de transmission",
-        "Différentiel",
+        "Dférentiel",
         "Joint SPI transmission",
       ],
     },
@@ -213,7 +213,7 @@ function App() {
         "Huile moteur 10W40",
         "Huiles transmission",
         "Huile boîte de vitesses",
-        "Huile différentiel",
+        "Huile dférentiel",
         "Huile direction assistée",
       ],
     },
@@ -222,7 +222,7 @@ function App() {
       sousCategories: [
         "Liquide de frein",
         "Liquide de refroidissement",
-        "Additifs moteur",
+        "Addits moteur",
         "Graisse",
       ],
     },
@@ -1092,7 +1092,7 @@ function App() {
   );
 
   const renderCurrentPage = () => {
-    if (pageActive === "devis") return <Devis />;
+    if (pageActive === "devis") return <div>Page devis en réparation</div>;
     if (pageActive === "clients") return <Clients />;
     if (pageActive === "fournisseurs") return <Fournisseurs />;
     if (pageActive === "finances") return <Finances />;
