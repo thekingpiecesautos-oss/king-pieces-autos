@@ -1,0 +1,306 @@
+.clients-page {
+  width: 100%;
+}
+
+.clients-header {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 24px;
+  padding: 24px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.clients-title {
+  margin: 8px 0 0 0;
+  color: #0f172a;
+  font-size: 46px;
+  font-weight: bold;
+  line-height: 1.05;
+}
+
+.clients-subtitle {
+  margin: 8px 0 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.clients-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.clients-search {
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  min-width: 280px;
+  outline: none;
+  font-size: 15px;
+  background: #f8fafc;
+}
+
+.clients-add-btn {
+  background: linear-gradient(90deg, #d4af37, #f4d26b);
+  color: #111827;
+  border: none;
+  padding: 14px 22px;
+  border-radius: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+  box-shadow: 0 8px 18px rgba(212, 175, 55, 0.25);
+}
+
+.clients-form-panel,
+.clients-sidebar,
+.client-detail-panel {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  margin-bottom: 24px;
+}
+
+.clients-form-panel h3,
+.client-achats-panel h3,
+.client-history-panel h3,
+.clients-sidebar h3 {
+  margin: 0 0 18px 0;
+  color: #0f172a;
+  font-size: 20px;
+}
+
+.clients-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.clients-form-grid input,
+.client-achats-form input,
+.paiement-select,
+.paiement-input {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+  width: 100%;
+}
+
+.clients-form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 12px;
+}
+
+.clients-save-btn,
+.clients-cancel-btn,
+.clients-add-piece-btn,
+.clients-pay-btn,
+.client-btn-edit,
+.client-btn-delete {
+  border: none;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.clients-save-btn,
+.clients-add-piece-btn,
+.clients-pay-btn {
+  background: #0f172a;
+  color: white;
+}
+
+.clients-cancel-btn {
+  background: #64748b;
+  color: white;
+}
+
+.client-btn-edit {
+  background: #0f172a;
+  color: white;
+}
+
+.client-btn-delete {
+  background: #dc2626;
+  color: white;
+}
+
+.clients-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.clients-sidebar {
+  position: sticky;
+  top: 24px;
+}
+
+.clients-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.client-card {
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 14px;
+  cursor: pointer;
+}
+
+.client-card.active {
+  border-color: #d4af37;
+  background: #fff8e1;
+}
+
+.client-card-top {
+  margin-bottom: 8px;
+}
+
+.client-card-info {
+  color: #64748b;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.client-card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.client-detail-header {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 12px;
+}
+
+.client-detail-header h2 {
+  margin: 0 0 10px 0;
+  font-size: 28px;
+  color: #0f172a;
+}
+
+.client-detail-header p {
+  margin: 4px 0;
+  color: #64748b;
+}
+
+.client-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.client-summary-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.client-summary-card span {
+  display: block;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.client-summary-card strong {
+  font-size: 28px;
+  color: #0f172a;
+}
+
+.client-achats-panel,
+.client-history-panel {
+  margin-top: 22px;
+}
+
+.client-achats-form {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.paiement-box {
+  margin-top: 18px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.paiement-box-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.payment-badge {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 12px;
+  color: white;
+}
+
+.badge-paye {
+  background: #16a34a;
+}
+
+.badge-partiel {
+  background: #f59e0b;
+}
+
+.badge-impaye {
+  background: #dc2626;
+}
+
+.clients-empty {
+  color: #64748b;
+  margin: 0;
+}
+
+@media (max-width: 1300px) {
+  .clients-layout,
+  .clients-form-grid,
+  .client-achats-form,
+  .client-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .clients-sidebar {
+    position: static;
+  }
+
+  .clients-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .clients-header-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .clients-search {
+    min-width: 100%;
+  }
+}
