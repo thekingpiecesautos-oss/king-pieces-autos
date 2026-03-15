@@ -7,7 +7,7 @@ function Devis() {
   const formatEuro = (value) => `${Number(value || 0).toFixed(2)} €`;
 
   const genererNumeroDevis = () => {
-    const maintenant = new Date(); 
+    const maintenant = new Date();
     const y = maintenant.getFullYear();
     const m = String(maintenant.getMonth() + 1).padStart(2, "0");
     const d = String(maintenant.getDate()).padStart(2, "0");
@@ -64,10 +64,12 @@ function Devis() {
   const [devisEditionId, setDevisEditionId] = useState(null);
 
   useEffect(() => {
-    fetchStore("devis_enregistres", []).then((data) => {
-      setDevisEnregistres(Array.isArray(data) ? data : []);
-      loaded.current = true;
-    });
+    fetchStore("devis_enregistres", [])
+      .then((data) => {
+        setDevisEnregistres(Array.isArray(data) ? data : []);
+        loaded.current = true;
+      })
+      .catch(console.error);
   }, []);
 
   useEffect(() => {
@@ -81,13 +83,9 @@ function Devis() {
     return qte * prix;
   };
 
-  const sousTotalTTC = useMemo(
-    () =>
-      lignes.reduce((acc, ligne) => {
-        return acc + totalLigneTTC(ligne);
-      }, 0),
-    [lignes]
-  );
+  const sousTotalTTC = useMemo(() => {
+    return lignes.reduce((acc, ligne) => acc + totalLigneTTC(ligne), 0);
+  }, [lignes]);
 
   const totalTTC = Math.max(0, sousTotalTTC - Number(remiseTTC || 0));
 
@@ -161,7 +159,9 @@ function Devis() {
     };
 
     if (devisEditionId) {
-      setDevisEnregistres((prev) => prev.map((d) => (d.id === devisEditionId ? devis : d)));
+      setDevisEnregistres((prev) =>
+        prev.map((d) => (d.id === devisEditionId ? devis : d))
+      );
       setDevisOuvert(devis);
     } else {
       setDevisEnregistres((prev) => [devis, ...prev]);
@@ -420,7 +420,6 @@ function Devis() {
       fontSize: 14,
       marginTop: 6,
     },
-
     printPage: {
       width: "100%",
       minHeight: "100vh",
@@ -439,12 +438,6 @@ function Devis() {
     },
     printCompanyLeft: {
       maxWidth: "52%",
-    },
-    printLogo: {
-      width: 70,
-      height: 70,
-      objectFit: "contain",
-      marginBottom: 8,
     },
     printCompanyName: {
       fontSize: 18,
@@ -616,7 +609,7 @@ function Devis() {
           </div>
         </div>
 
-        <div style={{ ...styles.section }}>
+        <div style={styles.section}>
           <h3 style={styles.sectionTitle}>Ajouter une pièce</h3>
 
           <div style={styles.formGrid5}>
@@ -1024,6 +1017,5 @@ function Devis() {
     </div>
   );
 }
-
 
 export default Devis;
