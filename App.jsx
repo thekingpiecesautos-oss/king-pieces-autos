@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import * as XLSX from "xlsx";
 import "./App.css";
-import logo from "./assets/logo.png";
-import imageKing from "./assets/king-pieces.jpeg";
+import logo from "./logo.png";
+import imageKing from "./king-pieces.jpeg";
 import Devis from "./Devis";
 import Clients from "./Clients";
 import Fournisseurs from "./Fournisseurs";
