@@ -9,7 +9,7 @@ function App() {
         alignItems: "center",
         justifyContent: "center",
         background: "#f8fafc",
-        fontFamily: "Arial, sans-serif",
+        fontFamily: "Arial, sans-serif", 
       }}
     >
       <div
