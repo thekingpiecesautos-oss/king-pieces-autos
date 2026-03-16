@@ -7,7 +7,7 @@ function App() {
   const [pageActive, setPageActive] = useState("stock");
 
   const pagesDisponibles = [
-    { key: "stock", label: "Stock", icon: "📦" },
+    { key: "stock", label: "Stock", icon: "📦" }, 
     { key: "devis", label: "Devis", icon: "📄" },
     { key: "clients", label: "Clients", icon: "👤" },
     { key: "fournisseurs", label: "Fournisseurs", icon: "🏭" },
