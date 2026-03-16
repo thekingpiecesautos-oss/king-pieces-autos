@@ -3,14 +3,7 @@ import * as XLSX from "xlsx";
 import "./App.css";
 import logo from "./logo.png";
 import imageKing from "./king-pieces.jpeg";
-// import Devis from "./Devis";
-import Clients from "./Clients";
-import Fournisseurs from "./Fournisseurs";
-import Finances from "./Finances";
-import Recettes from "./Recettes";
-import Utilisateurs from "./Utilisateurs";
 import Connexion from "./Connexion";
-import Parametres from "./Parametres";
 import { apiFetch, fetchStore, saveStore } from "./api";
 
 function App() {
@@ -96,7 +89,7 @@ function App() {
       sousCategories: [
         "Cardans",
         "Arbres de transmission",
-        "Dférentiel",
+        "Différentiel",
         "Joint SPI transmission",
       ],
     },
@@ -213,7 +206,7 @@ function App() {
         "Huile moteur 10W40",
         "Huiles transmission",
         "Huile boîte de vitesses",
-        "Huile dférentiel",
+        "Huile différentiel",
         "Huile direction assistée",
       ],
     },
@@ -222,7 +215,7 @@ function App() {
       sousCategories: [
         "Liquide de frein",
         "Liquide de refroidissement",
-        "Addits moteur",
+        "Additifs moteur",
         "Graisse",
       ],
     },
@@ -303,11 +296,13 @@ function App() {
 
       const base = Array.isArray(familles) ? familles : [];
       const fusion = [...famillesParDefaut];
+
       base.forEach((item) => {
         if (item?.cle && !fusion.some((f) => f.cle === item.cle)) {
           fusion.push(item);
         }
       });
+
       setFamillesMemorisees(fusion);
       storesCharges.current = true;
     };
@@ -428,10 +423,7 @@ function App() {
         code_barres: "",
       };
 
-      const url = modeEdition
-        ? `/api/stock/${pieceEnCours.id}`
-        : "/api/stock";
-
+      const url = modeEdition ? `/api/stock/${pieceEnCours.id}` : "/api/stock";
       const method = modeEdition ? "PUT" : "POST";
 
       await apiFetch(url, {
@@ -748,7 +740,6 @@ function App() {
               <th>Actions</th>
             </tr>
           </thead>
-
           <tbody>
             {liste.map((piece) => {
               const statut = getStatut(piece.quantite, piece.seuil_alerte || 2);
@@ -774,7 +765,10 @@ function App() {
                       <button className="btn-edit" onClick={() => modifierPiece(piece)}>
                         Modifier
                       </button>
-                      <button className="btn-delete" onClick={() => supprimerPiece(piece.id)}>
+                      <button
+                        className="btn-delete"
+                        onClick={() => supprimerPiece(piece.id)}
+                      >
                         Supprimer
                       </button>
                     </div>
@@ -805,7 +799,6 @@ function App() {
               <th>Action</th>
             </tr>
           </thead>
-
           <tbody>
             {liste.map((piece) => (
               <tr key={piece.id}>
@@ -1092,13 +1085,27 @@ function App() {
   );
 
   const renderCurrentPage = () => {
-    if (pageActive === "devis") return <div>Page devis en réparation</div>;
-    if (pageActive === "clients") return <Clients />;
-    if (pageActive === "fournisseurs") return <Fournisseurs />;
-    if (pageActive === "finances") return <Finances />;
-    if (pageActive === "recettes") return <Recettes />;
-    if (pageActive === "utilisateurs") return <Utilisateurs />;
-    if (pageActive === "parametres") return <Parametres />;
+    if (pageActive === "devis") {
+      return <div style={{ padding: 24 }}>Page devis en réparation</div>;
+    }
+    if (pageActive === "clients") {
+      return <div style={{ padding: 24 }}>Page clients en réparation</div>;
+    }
+    if (pageActive === "fournisseurs") {
+      return <div style={{ padding: 24 }}>Page fournisseurs en réparation</div>;
+    }
+    if (pageActive === "finances") {
+      return <div style={{ padding: 24 }}>Page finances en réparation</div>;
+    }
+    if (pageActive === "recettes") {
+      return <div style={{ padding: 24 }}>Page recettes en réparation</div>;
+    }
+    if (pageActive === "utilisateurs") {
+      return <div style={{ padding: 24 }}>Page utilisateurs en réparation</div>;
+    }
+    if (pageActive === "parametres") {
+      return <div style={{ padding: 24 }}>Page paramètres en réparation</div>;
+    }
     return renderStockPage();
   };
 
